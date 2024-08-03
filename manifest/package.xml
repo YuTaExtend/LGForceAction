@@ -24,7 +24,6 @@
 	</types>
 	<types>
 		<members>LGF_FieldMapping__c-ja</members>
-		<members>LGF_Setting__c-ja</members>
 		<members>LGF_Template__c-ja</members>
 		<name>CustomObjectTranslation</name>
 	</types>
