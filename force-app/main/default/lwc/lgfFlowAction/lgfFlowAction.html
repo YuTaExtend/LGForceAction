@@ -1,0 +1,19 @@
+<template>
+  <div style="height: var(--lwc-sizeSmall)">
+    <template lwc:if={showSpinner}>
+      <div class="spinner-block">
+        <div>PDF を生成しています ...</div>
+        <lightning-spinner
+          variant="brand"
+          alternative-text="Loading..."
+          size="medium"
+        ></lightning-spinner>
+      </div>
+    </template>
+    <template lwc:else>
+      <div class="message-block slds-scrollable_y">
+        <div>{message}</div>
+      </div>
+    </template>
+  </div>
+</template>

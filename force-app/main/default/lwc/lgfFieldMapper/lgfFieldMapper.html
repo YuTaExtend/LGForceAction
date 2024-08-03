@@ -1,0 +1,78 @@
+<template>
+  <template lwc:if={fieldMappingObjectInfo.data}>
+    <lightning-card title={fieldMappingObjectInfo.data.label} icon-name="standard:product_transfer">
+      <div class="slds-var-m-around_large">
+        <div class="slds-grid slds-wrap slds-grid_vertical-stretch">
+          <div class="slds-col slds-size_3-of-12 slds-var-p-around_xx-small field-label">
+            {fieldMappingObjectInfo.data.fields.Name.label}
+          </div>
+          <div class="slds-col slds-size_1-of-12 slds-var-p-around_xx-small field-label"></div>
+          <div class="slds-col slds-size_7-of-12 slds-var-p-around_xx-small field-label">
+            {fieldMappingObjectInfo.data.fields.FieldApiName__c.label}
+          </div>
+          <div class="slds-col slds-size_1-of-12 slds-var-p-around_xx-small field-label"></div>
+        </div>
+        <template for:each={fieldMappings} for:item="fieldMapping">
+          <div key={fieldMapping.Id} class="slds-grid slds-wrap slds-grid_vertical-stretch">
+            <div class="slds-col slds-size_3-of-12 slds-var-p-around_xx-small">
+              <lightning-input
+                type="text"
+                maxlength="80"
+                variant="label-hidden"
+                value={fieldMapping.Name}
+                data-id={fieldMapping.Id}
+                data-field="Name"
+                onchange={handleChangeField}
+              ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-var-p-around_xx-small slds-align_absolute-center">
+              <lightning-icon icon-name="utility:back" size="small"></lightning-icon>
+            </div>
+            <div class="slds-col slds-size_7-of-12 slds-var-p-around_xx-small">
+              <lightning-input
+                type="text"
+                maxlength="255"
+                variant="label-hidden"
+                value={fieldMapping.FieldApiName__c}
+                data-id={fieldMapping.Id}
+                data-field="FieldApiName__c"
+                onchange={handleChangeField}
+              ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-var-p-around_xx-small slds-align_absolute-center">
+              <lightning-button-icon
+                icon-name="utility:dash"
+                size="medium"
+                onclick={handleClickDelete}
+                variant="border-filled"
+                data-info={fieldMapping.Id}
+              ></lightning-button-icon>
+            </div>
+          </div>
+        </template>
+        <div class="slds-var-p-around_xx-small">
+          <lightning-button-icon
+            icon-name="utility:add"
+            size="medium"
+            onclick={handleClickAdd}
+            variant="border-filled"
+          ></lightning-button-icon>
+        </div>
+        <div class="slds-align_absolute-center">
+          <lightning-button label="Reload" onclick={handleClickReload} variant="outlined"></lightning-button>
+          <lightning-button
+            label="Save"
+            onclick={handleClickSave}
+            variant="brand"
+            class="slds-var-m-left_x-small"
+          ></lightning-button>
+        </div>
+      </div>
+      <template lwc:if={showSpinner}>
+        <div class="spinner-block">
+          <lightning-spinner variant="brand" alternative-text="Loading..." size="medium"></lightning-spinner>
+        </div>
+      </template>
+    </lightning-card>
+  </template>
+</template>
