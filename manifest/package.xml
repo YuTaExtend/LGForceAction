@@ -19,7 +19,6 @@
 	</types>
 	<types>
 		<members>LGF_FieldMapping__c</members>
-		<members>LGF_Setting__c</members>
 		<members>LGF_Template__c</members>
 		<name>CustomObject</name>
 	</types>
