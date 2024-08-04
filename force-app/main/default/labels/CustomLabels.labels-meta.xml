@@ -6,7 +6,7 @@
         <language>ja</language>
         <protected>true</protected>
         <shortDescription>【LGForce】APIキー</shortDescription>
-        <value></value>
+        <value>（ここにAPIキーを入力してください）</value>
     </labels>
     <labels>
         <fullName>LGF_ENDPOINT_URL</fullName>
