@@ -5,7 +5,7 @@
     <formulas>
         <name>TemplateAndName</name>
         <dataType>String</dataType>
-        <expression>{!$Record.Template__c} &amp; &apos;:&apos; &amp; {!$Record.Name}</expression>
+        <expression>{!$Record.LGF_Template__c} &amp; &apos;:&apos; &amp; {!$Record.Name}</expression>
     </formulas>
     <interviewLabel>Check Duplicate Of Field Mapping {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Check Duplicate Of Field Mapping</label>
