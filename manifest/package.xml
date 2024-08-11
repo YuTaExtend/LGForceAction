@@ -45,7 +45,6 @@
 		<name>Layout</name>
 	</types>
 	<types>
-		<members>lgfAction</members>
 		<members>lgfFieldMapper</members>
 		<members>lgfFlowAction</members>
 		<name>LightningComponentBundle</name>
