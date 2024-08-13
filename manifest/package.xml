@@ -49,5 +49,9 @@
 		<members>lgfFlowAction</members>
 		<name>LightningComponentBundle</name>
 	</types>
+    <types>
+        <members>lgforce</members>
+        <name>RemoteSiteSetting</name>
+    </types>
 	<version>60.0</version>
 </Package>
