@@ -41,7 +41,7 @@ public with sharing class LGF_FieldMappingController {
                 }
                 insertList.add(
                     new LGF_FieldMapping__c(
-                        LGF_Template__c = record.LGF_Template__c
+                        LGF_Template__c = templateId
                         , Name = record.Name
                         , FieldApiName__c = record.FieldApiName__c));
             }
