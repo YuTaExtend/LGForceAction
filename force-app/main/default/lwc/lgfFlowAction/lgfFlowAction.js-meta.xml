@@ -10,6 +10,8 @@
         <targetConfig targets="lightning__FlowScreen">
             <property name="recordId" label="レコードID" type="String" />
             <property name="templateId" label="テンプレートID" type="String" />
+            <property name="pdfData" label="PDFデータ(base64)" type="String" role="outputOnly" />
+            <property name="outputFileName" label="PDFファイル名" type="String" role="outputOnly" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
