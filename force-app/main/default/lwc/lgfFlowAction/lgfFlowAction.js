@@ -6,6 +6,7 @@ export default class LgfFlowAction extends LightningElement {
   @api templateId;
   @api outputFileName;
   @api pdfData;
+  @api requireDownload;
   message;
   showSpinner = false;
 
@@ -15,17 +16,18 @@ export default class LgfFlowAction extends LightningElement {
       const result = await convertExcelToPDF({
         param: {
           recordId: this.recordId,
-          templateId: this.templateId,
-        },
+          templateId: this.templateId
+        }
       });
       if (result && !this.message) {
-        const linkSource = `data:application/octet-stream;base64,${result.pdfData}`;
-        const downloadLink = document.createElement("a");
-        downloadLink.href = linkSource;
-        downloadLink.download = result.outputFileName;
-        downloadLink.click();
-        this.message = "PDF の出力が完了しました。";
-
+        if (this.requireDownload) {
+          const linkSource = `data:application/octet-stream;base64,${result.pdfData}`;
+          const downloadLink = document.createElement("a");
+          downloadLink.href = linkSource;
+          downloadLink.download = result.outputFileName;
+          downloadLink.click();
+          this.message = "PDF の出力が完了しました。";
+        }
         this.outputFileName = result.outputFileName;
         this.pdfData = result.pdfData;
       }
