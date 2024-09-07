@@ -8,9 +8,10 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="recordId" label="レコードID" type="String" />
-            <property name="templateId" label="テンプレートID" type="String" />
-            <property name="requireDownload" label="ダウンロード実行" type="Boolean" default="true"/>
+            <property name="recordId" label="レコードID" type="String" description="差し込み対象のレコードのIDを指定してください。"/>
+            <property name="templateId" label="テンプレートID" type="String" description="テンプレートのIDを指定してください。"/>
+            <property name="requireConvertPDF" label="PDF変換実行" type="Boolean" default="true" description="PDF変換を実行します。Falseの場合は変換せずにExcelの値差し込みのみ行い出力します。"/>
+            <property name="requireDownload" label="ダウンロード実行" type="Boolean" default="true" description="その場でダウンロードが必要な場合はTrueを設定してください。"/>
             <property name="pdfData" label="PDFデータ(base64)" type="String" role="outputOnly" />
             <property name="outputFileName" label="PDFファイル名" type="String" role="outputOnly" />
         </targetConfig>

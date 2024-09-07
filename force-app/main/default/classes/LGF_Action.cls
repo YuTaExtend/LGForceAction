@@ -7,6 +7,8 @@ global class LGF_Action {
     global Id recordId { get; set; }
     @AuraEnabled
     global Id templateId { get; set; }
+    @AuraEnabled
+    global Boolean requireConvertPDF { get; set; }
   }
 
   global class LGFAResult {
@@ -94,7 +96,8 @@ global class LGF_Action {
         '"organizationId":' +
         JSON.serialize(UserInfo.getOrganizationId()) +
         ',';
-      body += '"apiKey":' + JSON.serialize(Label.LGF_API_KEY);
+      body += '"apiKey":' + JSON.serialize(Label.LGF_API_KEY) + ',';
+      body += '"requireConvertPDF":' + String.valueOf(param.requireConvertPDF);
       body += '}';
       System.debug(body);
     } catch (Exception e) {
