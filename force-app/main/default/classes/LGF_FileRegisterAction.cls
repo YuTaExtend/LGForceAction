@@ -23,6 +23,8 @@ global class LGF_FileRegisterAction {
         Result result = new Result();
         result.contentVersionId = createdCv.Id;
         result.contentDocumentId = createdCv.ContentDocumentId;
+        result.hasError = false;
+        result.errorMessage = '';
         results.add(result);
       }
     } catch (Exception e) {
