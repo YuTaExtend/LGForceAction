@@ -12,12 +12,18 @@ export default class LgfFlowAction extends LightningElement {
   showSpinner = false;
 
   get excelOrPDF() {
-    return this.requireConvertPDF ? 'PDF' : 'Excel';
+    return this.requireConvertPDF ? "PDF" : "Excel";
   }
 
   async connectedCallback() {
     this.showSpinner = true;
     try {
+      if (typeof this.requireConvertPDF === "undefined") {
+        this.requireConvertPDF = true;
+      }
+      if (typeof this.requireDownload === "undefined") {
+        this.requireDownload = true;
+      }
       const result = await convertExcelToPDF({
         param: {
           recordId: this.recordId,
