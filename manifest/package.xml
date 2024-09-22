@@ -5,6 +5,8 @@
 		<members>LGF_Action_Test</members>
 		<members>LGF_FieldMappingController</members>
 		<members>LGF_FieldMappingController_Test</members>
+		<members>LGF_FileRegisterAction</members>
+		<members>LGF_FileRegisterAction_Test</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
